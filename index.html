@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Tela de Carregamento com a Esfera do Dragão -->
+    <div id="loading-screen">
+        <img src="Ball.png" alt="Carregando..." class="dragon-ball">
+    </div>
+
+    <!-- Conteúdo Principal do Site (Oculto até o fim do loading) -->
+    <div id="main-content" class="hidden">
+        
+        <header>
+            <h1>DB Clássico</h1>
+        </header>
+
+        <!-- Container da Lista de Episódios -->
+        <main id="episode-list-view">
+            <div id="episode-grid" class="grid">
+                <!-- Os episódios serão gerados aqui pelo JavaScript -->
+            </div>
+            
+            <!-- Controles de Paginação -->
+            <div id="pagination" class="pagination-controls">
+                <!-- Botões de página gerados pelo JS -->
+            </div>
+        </main>
+
+        <!-- Container do Player de Vídeo -->
+        <main id="player-view" class="hidden">
+            <div class="player-wrapper">
+                <button id="btn-back" class="btn-action">← Ver todos os episódios</button>
+                
+                <h2 id="current-episode-title">Episódio</h2>
+                
+                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe id="video-player" src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
+
+                <div class="player-navigation">
+                    <button id="btn-prev" class="btn-action">Episódio Anterior</button>
+                    <button id="btn-next" class="btn-action">Próximo Episódio</button>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

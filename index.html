@@ -3,49 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dragon Ball</title>
+    <title>Dragon Ball Clássico</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Tela de Carregamento com a Esfera do Dragão -->
+    <!-- Tela de Carregamento -->
     <div id="loading-screen">
         <img src="Ball.png" alt="Carregando..." class="dragon-ball">
     </div>
 
-    <!-- Conteúdo Principal do Site (Oculto até o fim do loading) -->
     <div id="main-content" class="hidden">
         
-        <header>
-            <h1>DB Clássico</h1>
-        </header>
+        <!-- Navbar Simples -->
+        <nav class="top-nav">
+            <h1 class="logo">DB Clássico</h1>
+        </nav>
 
-        <!-- Container da Lista de Episódios -->
-        <main id="episode-list-view">
-            <div id="episode-grid" class="grid">
-                <!-- Os episódios serão gerados aqui pelo JavaScript -->
-            </div>
-            
-            <!-- Controles de Paginação -->
-            <div id="pagination" class="pagination-controls">
-                <!-- Botões de página gerados pelo JS -->
-            </div>
-        </main>
+        <!-- Container de Apresentação (Hero) e Lista -->
+        <div id="home-view">
+            <!-- Destaque Principal -->
+            <section class="hero-section">
+                <!-- A IMAGEM DE FUNDO É CONFIGURADA NO ARQUIVO CSS -->
+                <div class="hero-content">
+                    <h2 class="anime-title">DRAGON BALL<br><span>CLÁSSICO</span></h2>
+                    <p class="anime-synopsis">
+                        Acompanhe as aventuras de Goku desde sua infância, treinando artes marciais, fazendo amigos e partindo em uma grande jornada em busca das sete Esferas do Dragão.
+                    </p>
+                    <div class="hero-buttons">
+                        <button id="btn-start-ep1" class="btn-primary">▶ Começar EP 1</button>
+                        <button id="btn-scroll-list" class="btn-secondary">☷ Ver Episódios</button>
+                    </div>
+                </div>
+                <div class="hero-fade-bottom"></div>
+            </section>
 
-        <!-- Container do Player de Vídeo -->
+            <!-- Lista de Episódios -->
+            <section id="episode-list-section">
+                <div class="section-header">
+                    <h3>LISTA DE EPISÓDIOS</h3>
+                </div>
+                
+                <div id="episode-grid" class="grid">
+                    <!-- Cards gerados pelo JavaScript -->
+                </div>
+                
+                <!-- Controles de Paginação -->
+                <div id="pagination" class="pagination-controls">
+                    <!-- Botões gerados pelo JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Tela do Player de Vídeo -->
         <main id="player-view" class="hidden">
             <div class="player-wrapper">
-                <button id="btn-back" class="btn-action">← Ver todos os episódios</button>
+                <div class="player-header">
+                    <button id="btn-back" class="text-btn">← Voltar para a lista</button>
+                    <h2 id="current-episode-title">Episódio 01</h2>
+                </div>
                 
-                <h2 id="current-episode-title">Episódio</h2>
-                
-                <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe id="video-player" src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
-</div>
+                <div class="video-container">
+                    <iframe id="video-player" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
 
                 <div class="player-navigation">
-                    <button id="btn-prev" class="btn-action">Episódio Anterior</button>
-                    <button id="btn-next" class="btn-action">Próximo Episódio</button>
+                    <button id="btn-prev" class="text-btn">〈 Episódio Anterior</button>
+                    <button id="btn-next" class="text-btn">Próximo Episódio 〉</button>
                 </div>
             </div>
         </main>
